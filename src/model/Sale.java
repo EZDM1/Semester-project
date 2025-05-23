@@ -8,10 +8,10 @@ import java.util.List;
  * Represents a sale transaction in the QB system
  */
 public class Sale {
-    private int saleID; // Adding this for database reference
+    private int saleID;
     private LocalDateTime dateTime;
     private double totalAmount;
-    private String paymentStatus;
+    private String paymentMethod;
     private String status;
     private String receiptNumber;
     private Employee employee;
@@ -23,7 +23,7 @@ public class Sale {
     public Sale() {
         this.dateTime = LocalDateTime.now();
         this.totalAmount = 0.0;
-        this.paymentStatus = "PENDING";
+        this.paymentMethod = "PENDING";
         this.status = "NEW";
         this.saleLineItems = new ArrayList<>();
     }
@@ -116,8 +116,8 @@ public class Sale {
      * 
      * @return The payment status
      */
-    public String getPaymentStatus() {
-        return paymentStatus;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
     
     /**
@@ -125,8 +125,8 @@ public class Sale {
      * 
      * @param paymentStatus The new payment status
      */
-    public void setPaymentStatus(String paymentStatus) {
-        this.paymentStatus = paymentStatus;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
     
     /**

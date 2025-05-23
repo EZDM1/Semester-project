@@ -3,6 +3,7 @@ package model;
  * Represents a product in the QB inventory system
  */
 public class Product {
+	private int productId;
     private String barcode;
     private String name;
     private String description;
@@ -18,12 +19,17 @@ public class Product {
      * @param price The product price
      * @param category The product category
      */
-    public Product(String barcode, String name, String description, double price, String category) {
-        this.barcode = barcode;
+    public Product(int productId, String barcode, String name, String description, double price, String category) {
+    	this.productId = productId;
+    	this.barcode = barcode;
         this.name = name;
         this.description = description;
         this.price = price;
         this.category = category;
+    }
+    
+    public int getProductId() {
+        return productId;
     }
     
     /**
